@@ -1,0 +1,65 @@
+<!DOCTYPE html>]
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Details - Elden Ring Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: #1a1a1a; color: #f0e68c; font-family: 'Georgia', serif; }
+        .navbar { background-color: #000 !important; border-bottom: 2px solid #b8860b; }
+        .detail-card { 
+            background: linear-gradient(145deg, #2d2d2d, #1a1a1a); 
+            border: 1px solid #b8860b; 
+            padding: 40px; 
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.3);
+        }
+        .hero-img { 
+            width: 100%; 
+            border-radius: 10px; 
+            border: 2px solid #b8860b; 
+            filter: sepia(20%);
+        }
+        .stat-badge { background-color: #b8860b; color: black; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Elden Ring Gallery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Details</a></li>
+                <li class="nav-item"><a class="nav-link" href="new-character-form.html">Add a Character </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="detail-card">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+            <h1>Queen Marika the Eternal</h1>
+            <img src="images/marika_full.jpg" alt="Queen Marika" class="hero-img my-4">
+        </div>
+        <div class="col-lg-7">
+                <h1 class="mb-3">Queen Marika the Eternal</h1>
+                <p><span class="stat-badge">Class:</span> Empyrean, God | <span class="stat-badge">Affiliation:</span> Golden Order</p>
+                <p>Queen Marika the Eternal is the sovereign of the Lands Between and the vessel of the Elden Ring. As the central figure in the lore of Elden Ring, Marika's actions and decisions have shaped the fate of the world and its inhabitants. Her divine status and complex motivations make her one of the most intriguing characters in the game.</p>
+
+                <h3 class="mt-4">Character Traits</h3>
+                <ul>
+                    <li>Divine Power</li>
+                    <li>Leadership</li>
+                    <li>Complex Motivations</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </main>
+</html>

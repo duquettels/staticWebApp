@@ -1,82 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elden Ring Character Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>The Lands Between - Character Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    
+        body {
+            background-color: #121212;
+            color: #f0e68c;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background-color: #000 !important;
+            border-bottom: 2px solid #b8860b;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #f0e68c !important;
+        }
+
+      
+        .character-card {
+            background-color: #1e1e1e;
+            border: 1px solid #b8860b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.5);
+        }
+
+        .custom-img {
+            height: 300px; 
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 2px solid #b8860b;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .form-control {
+            background-color: #2d2d2d;
+            border: 1px solid #b8860b;
+            color: white;
+        }
+
+        .form-control:focus {
+            background-color: #3d3d3d;
+            color: white;
+            border-color: #f0e68c;
+            box-shadow: 0 0 8px rgba(240, 230, 140, 0.5);
+        }
+
+        .form-control::placeholder {
+            color: #8a8a8a; 
+            opacity: 1; 
+        }
+
+        .btn-gold {
+            background-color: #b8860b;
+            color: black;
+            font-weight: bold;
+        }
+
+        .btn-gold:hover {
+            background-color: #f0e68c;
+        }
+    </style>
 </head>
-<body class="bg-dark text-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Elden Ring Gallery</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="details.html">Details</a></li>
-            <li class="nav-item"><a class="nav-link" href="new-character-form.html">Add a Character </a></li>
-        </ul>
-    </div>
-</nav>
+<body>
 
-<main class="container mt-4">
-    <h1 class="text-center mb-4">Characters in the Lands Between</h1>
-
-    <div class="row justify-content-center mb-4">
-        <div class="col-md-6">
-                <input type="text" id="characterSearch" class="form-control" placeholder="Search by name or role (e.g. Demigod)...">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="index.html">ELDEN RING GALLERY</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="details-marika.html">Details</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="new-character-form.html">Add Character</a>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="gallery-grid">
-        <div class="character-card">
-            <img src="images/marika.jpg" alt="Queen Marika">
-            <h3>Queen Marika the Eternal</h3>
-            <p><strong>Class: Empyrean, God</strong> | <strong>Affiliation: Golden Order</strong></p>
-            <p>The sovereign of the Lands Between and the vessel of the Elden Ring.</p>
-            <a href="details.html">View Details</a>
+    <header class="container text-center mt-5">
+        <h1 class="display-4">Legends of the Lands Between</h1>
+        <p class="lead">Gallery of Important Characters in Elden Ring</p>
+        
+        <div class="search-container">
+            <input type="text" id="charSearch" class="form-control" placeholder="Search by name or role (e.g. Demigod)...">
         </div>
+    </header>
 
-        <div class="character-card">
-            <img src="images/malenia.jpg" alt="Malenia">
-            <h3>Malenia, Blade of Miquella</h3>
-            <p><strong>Class: Empyrean, Demigod</strong> | <strong>Affiliation: Outer God of Rot</strong></p>
-            <p>The Goddess of Rot, twin of Miquella.</p>
-            <a href="details.html">View Details</a>
-        </div>
+    <main class="container mb-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="galleryGrid">
+            
+            <div class="col char-item" data-name="marika god">
+                <div class="card h-100 character-card">
+                    <img src="images/marika.jpg" class="custom-img" alt="Queen Marika">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-warning">Queen Marika</h4>
+                        <h6 class="card-text text-light">Eternal Queen of the Lands Between</h6>
+                        <p class="card-text text-light"><strong>Class: Empyrean, God</strong> | <strong>Affiliation: Golden Order</strong></p>
+                        <a href="details.html" class="btn btn-gold btn-sm">View Legend</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="character-card">
-            <img src="images/radagon.jpg" alt="Radagon">
-            <h3>Radagon of the Golden Order</h3>
-            <p><strong>Class: God</strong> | <strong>Affiliation: Golden Order</strong></p>
-            <p>Champion of the Golden Order and the second Elden Lord.</p>
-            <a href="details.html">View Details</a>
-        </div>
+            <div class="col char-item" data-name="malenia demigod boss">
+                <div class="card h-100 character-card">
+                    <img src="images/malenia.jpg" class="custom-img" alt="Malenia">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-warning">Malenia</h4>
+                        <h6 class="card-text text-light">Blade of Miquella</h6>
+                        <p class="card-text text-light"><strong>Class: Demigod</strong> | <strong>Affiliation: Scarlet Rot</strong></p>
+                        <a href="details.html" class="btn btn-gold btn-sm">View Legend</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="character-card">
-            <img src="images/ranni.jpg" alt="Ranni">
-            <h3>Queen Ranni the Witch</h3>
-            <p><strong>Class: Demigod, Empyrean(optional)</strong> | <strong>Affiliation: Carian Royal Family, Dark Moon</strong></p>
-            <p>An Empyrean who seeks to bring about the Age of the Stars.</p>
-            <a href="details.html">View Details</a>
-        </div>
+            <div class="col char-item" data-name="ranni empyrean witch">
+                <div class="card h-100 character-card">
+                    <img src="images/ranni.jpg" class="custom-img" alt="Ranni">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-warning">Ranni the Witch</h4>
+                        <h6 class="card-text text-light">Lunar Princess</h6>
+                        <p class="card-text text-light"><strong>Class: Empyrean, Demigod</strong> | <strong>Affiliation: Cairian Royal Family</strong></p>
+                        <a href="details.html" class="btn btn-gold btn-sm">View Legend</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="character-card">
-            <img src="images/godfrey.jpg" alt="Godfrey">
-            <h3>Godfrey, First Elden Lord</h3>
-            <p><strong>Class: God</strong> | <strong>Affiliation: Golden Order</strong></p>
-            <p>The first Elden Lord and the founder of the Golden Order.</p>
-            <a href="details.html">View Details</a>
-        </div>
+            <div class="col char-item" data-name="radagon elden lord god">
+                <div class="card h-100 character-card">
+                    <img src="images/radagon.jpg" class="custom-img" alt="Radagon">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-warning">Radagon</h4>
+                        <h6 class="card-text text-light">The Second Elden Lord</h6>
+                        <p class="card-text text-light"><strong>Class: God</strong> | <strong>Affiliation: Golden Order</strong></p>
+                        <a href="details.html" class="btn btn-gold btn-sm">View Legend</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="character-card">
-            <img src="images/radahn.png" alt="Radahn">
-            <h3>Starscourge Radahn</h3>
-            <p><strong>Class: Demigod, Shardbearer</strong> | <strong>Affiliation: Redmanes</strong></p>
-            <p>The strongest demigod during the Shattering, son of Radagon and Rennala.</p>
-            <a href="details.html">View Details</a>
-        </div>
-    </div>
+            <div class="col char-item" data-name="godfrey hoarah loux warrior">
+                <div class="card h-100 character-card">
+                    <img src="images/godfrey.jpg" class="custom-img" alt="Godfrey">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-warning">Godfrey</h4>
+                        <h6 class="card-text text-light">Role: First Elden Lord</h6>
+                        <p class="card-text text-light"><strong>Class: Warrior</strong> | <strong>Affiliation: Golden Order</strong></p>
+                        <a href="details.html" class="btn btn-gold btn-sm">View Legend</a>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            </div>
+    </main>
+
+    <footer class="container text-center py-4 border-top border-secondary">
+        <p class="text-muted">Levi Duquette | CSC340</p>
+    </footer>
+
+    <script>
+        document.getElementById('charSearch').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll('.char-item');
+
+            items.forEach(function(item) {
+                let name = item.getAttribute('data-name').toLowerCase();
+                if (name.includes(filter)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

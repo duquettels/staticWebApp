@@ -3,49 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a New Character - Elden Ring Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Add New Legend - Elden Ring Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       
+        body {
+            background-color: #121212;
+            color: #f0e68c;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background-color: #000 !important;
+            border-bottom: 2px solid #b8860b;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #f0e68c !important;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: #1e1e1e;
+            border: 1px solid #b8860b;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.2);
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #b8860b;
+        }
+
+        .form-control {
+            background-color: #2d2d2d;
+            border: 1px solid #b8860b;
+            color: #f0e68c;
+            caret-color: #f0e68c;
+        }
+
+        .form-control:focus {
+            background-color: #3d3d3d;
+            color: #ffffff;
+            border-color: #f0e68c;
+            box-shadow: 0 0 8px rgba(240, 230, 140, 0.5);
+            outline: none;
+        }
+
+        .form-control::placeholder {
+            color: #8a8a8a;
+        }
+
+        .btn-gold {
+            background-color: #b8860b;
+            color: black;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #f0e68c;
+            transform: scale(1.02);
+        }
+    </style>
 </head>
-<body class="bg-dark text-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Elden Ring Gallery</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="details.html">Details</a></li>
-                <li class="nav-item"><a class="nav-link active" href="#">Add a Character</a></li>
-            </ul>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="index.html">ELDEN RING GALLERY</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="details-marika.html">Details</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link active" href="new-character-form.html">Add Character</a>
+            </div>
         </div>
     </nav>
 
-    <main class="container mt-4">
-        <h1>Add a New Character to the Gallery</h1>
+    <main class="container">
+        <div class="form-container">
+            <h1 class="text-center mb-4">Add a New Legend</h1>
+            <p class="text-center text-muted mb-4">Enter the details of a new inhabitant of the Lands Between.</p>
+            
+            <form id="characterForm">
+                <div class="mb-3">
+                    <label for="charName" class="form-label">Character Name</label>
+                    <input type="text" class="form-control" id="charName" placeholder="e.g. Blaidd the Half-Wolf" required>
+                </div>
 
-        <form id="characterForm">
-            <div class="form-group mb-3">
-                <label for="characterName">Character Name:</label>
-                <input type="text" id="characterName" name="characterName" required class="form-control">
-            </div>
+                <div class="mb-3">
+                    <label for="charUniverse" class="form-label">Universe</label>
+                    <input type="text" class="form-control" id="charUniverse" value="Elden Ring" required>
+                </div>
 
-            <div class="form-group mb-3">
-                <label for="characterClass">Class:</label>
-                <input type="text" id="characterClass" name="characterClass" required  class ="form-control">
-            </div>
+                <div class="mb-3">
+                    <label for="charRole" class="form-label">Role</label>
+                    <input type="text" class="form-control" id="charRole" placeholder="e.g. Shadow of Ranni" required>
+                </div>
 
-            <div class = "form-group mb-3">
-                <label for = "affiliation">Affiliation:</label>
-                <input type = "text" id = "affiliation" name = "affiliation" required  class ="form-control">
-            </div>
+                <div class="mb-3">
+                    <label for="charImg" class="form-label">Image URL</label>
+                    <input type="url" class="form-control" id="charImg" placeholder="https://example.com/image.jpg">
+                </div>
 
-            <div class = "form-group mb-3">
-                <label for = "description">Description:</label>
-                <textarea id = "description" name = "description" required  rows = "4"></textarea> 
-            </div>
+                <div class="mb-3">
+                    <label for="charDesc" class="form-label">Character Description</label>
+                    <textarea class="form-control" id="charDesc" rows="4" placeholder="Briefly describe their history or significance..."></textarea>
+                </div>
 
-            <!-- Submit Button -->
-            <button type = "submit" value = "Submit Character Details" class="btn btn-primary">Submit Character Details</button> 
-        </form>
+                <button type="submit" class="btn btn-gold py-2">Submit Prototype</button>
+            </form>
+            
+            <div class="mt-4 text-center">
+                <small class="text italic">* This is a static prototype. Form data is not saved to a database.
